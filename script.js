@@ -13,7 +13,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
 	console.log(username, 'data');
 
 	// Sending a POST request to the server
-	fetch('https://example.com/api/login', {
+	fetch('http://localhost:3000/adminlogin', {
 		method: 'POST', // Specify the method
 		headers: {
 			'Content-Type': 'application/json' // Specify the content type
