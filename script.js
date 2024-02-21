@@ -17,12 +17,12 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
 	console.log(username, 'data');
 
 	// Sending a POST request to the server
-	fetch('http://localhost:3000/graminlogin', {
+	fetch('http://localhost:3000/sso-gramin-user', {
 		method: 'POST', // Specify the method
 		headers: {
 			'Content-Type': 'application/json' // Specify the content type
 		},
-		body: data // Convert the JavaScript object to a JSON string
+		body: JSON.stringify(data) // Convert the JavaScript object to a JSON string
 	})
 		.then((response) => {
 			if (!response.ok) {
@@ -30,10 +30,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
 			}
 			return response.json(); // Parse JSON response into a JavaScript object
 		})
-		.then((data) => {
-			console.log(data); // Handle the data from the server
-			alert('Login successful!');
-		})
+
 		.catch((error) => {
 			console.error('There was a problem with the fetch operation:', error);
 			alert('Login failed!');
