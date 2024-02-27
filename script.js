@@ -6,12 +6,19 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
 
 	// Constructing the data object to send
 	const data = {
-		expiration: 1708592705000,
 		authorizationToken:
-			'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIyNzU1MjRmYS05N2I2LTQ3ZWMtYTc4Mi1kNTNhMjc4ZWQwNmEiLCJzaXRlIjoiaG9pY2hvaXR2Iiwic2l0ZUlkIjoiN2ZhMGVhOWEtOTc5OS00NDE3LTk5ZjUtY2JiNTM0M2M1NTFkIiwiZW1haWwiOiJzYWNoaW50ZXN0QGdtYWlsLmNvbSIsImlwYWRkcmVzc2VzIjoiNDkuMzcuNTQuMjUyLCAxMC4xMjAuMzcuMTEzLCAzNS4xNzQuMTI5Ljc3LCAxMzAuMTc2Ljk4LjcxIiwiY291bnRyeUNvZGUiOiJJTiIsInBvc3RhbGNvZGUiOiI3MTMzMjUiLCJwcm92aWRlciI6InZpZXdsaWZ0IiwiZGV2aWNlSWQiOiJicm93c2VyLWVmMzQ2ODExLTkyNDgtZWFlZC05N2MxLTNhMjdjOTdhOWUzMCIsImlkIjoiMjc1NTI0ZmEtOTdiNi00N2VjLWE3ODItZDUzYTI3OGVkMDZhIiwicGhvbmVOdW1iZXIiOiIrOTE5NjgyNjg1NjQzIiwicGhvbmVDb2RlIjo5MSwiREVWSUNFX0xJTUlUX0VYQ0VFREVEIjp0cnVlLCJpYXQiOjE3MDg1MDYzMDUsImV4cCI6MTcwODU5MjcwNX0.4gPHryoUCvjohgfaPVB2vG49U0GEz1lB0Afaduc6y_Y',
+			'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIyNzU1MjRmYS05N2I2LTQ3ZWMtYTc4Mi1kNTNhMjc4ZWQwNmEiLCJzaXRlIjoiaG9pY2hvaXR2Iiwic2l0ZUlkIjoiN2ZhMGVhOWEtOTc5OS00NDE3LTk5ZjUtY2JiNTM0M2M1NTFkIiwiZW1haWwiOiJzYWNoaW50ZXN0QGdtYWlsLmNvbSIsImlwYWRkcmVzc2VzIjoiNDUuNjQuMjM3Ljg1LCAxMC4xMjAuOC4yNTMsIDM1LjE3NC4xMjkuNzcsIDEzMC4xNzYuOTguODYiLCJjb3VudHJ5Q29kZSI6IklOIiwicG9zdGFsY29kZSI6IjcwMDAxNCIsInByb3ZpZGVyIjoidmlld2xpZnQiLCJkZXZpY2VJZCI6ImJyb3dzZXItN2U5NzE3ZDItOWQ5NS1hODM5LTkyMzMtNTM0M2NlOGMzM2M4IiwiaWQiOiIyNzU1MjRmYS05N2I2LTQ3ZWMtYTc4Mi1kNTNhMjc4ZWQwNmEiLCJwaG9uZU51bWJlciI6Iis5MTk2ODI2ODU2NDMiLCJwaG9uZUNvZGUiOjkxLCJpYXQiOjE3MDkwMTc5MjMsImV4cCI6MTcwOTEwNDMyM30.tadOPjZNtQ68OEaDSX-cmB4SaL1xnqoHV351uR-Rx1A',
 		refreshToken:
-			'6ffe8f9bb658e5e8f8ff07079b6a350ff2474abab39b9acbfe2c09ea61dc4a6ccf1b5b79f298adee6fe46a46d9ed2a06',
-		duration: 86399608
+			'eccf8471f9af14cb9af9e207b462eafcc3f2231714cebad87f4ddb1813db5d65835ae677bbfdf76e0c6e2a52da3cfcbc',
+		userId: '275524fa-97b6-47ec-a782-d53a278ed06a',
+		email: 'sachintest@gmail.com',
+		name: 'sachin sharma',
+		isSubscribed: false,
+		provider: 'viewlift',
+		providers: ['viewlift'],
+		passwordEnabled: true,
+		phoneNumber: '+919682685643',
+		phoneCode: 91
 	};
 
 	console.log(username, 'data');
@@ -28,7 +35,8 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
 			if (!response.ok) {
 				throw new Error('Network response was not ok');
 			}
-			return response.json(); // Parse JSON response into a JavaScript object
+			// return response.json();
+			window.location.href = 'http://localhost:3000/'; // Parse JSON response into a JavaScript object
 		})
 
 		.catch((error) => {
