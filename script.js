@@ -12,13 +12,12 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
 			'23b1c5331a1ea1e405649e8a0395d84da52ccc6a6be76ded0c2cdafb936765693a99b6258e842cffe2e08dc3bc5aed1a'
 	};
 
-	console.log(username, 'data');
-
 	// Sending a POST request to the server
 	fetch('http://localhost:3000/sso-gramin-user', {
 		method: 'POST', // Specify the method
 		headers: {
-			'Content-Type': 'application/json' // Specify the content type
+			'Content-Type': 'application/json', // Specify the content type
+			Authorization: `Bearer ${JSON.stringify(data)}`
 		},
 		body: JSON.stringify(data) // Convert the JavaScript object to a JSON string
 	})
@@ -28,7 +27,6 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
 			}
 			// return response.json();
 			window.location.href = 'http://localhost:3000/';
-			window.location.headers(data);
 			// Parse JSON response into a JavaScript object
 		})
 
